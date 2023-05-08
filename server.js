@@ -1,13 +1,14 @@
 const express = require('express');
+const htmlRoutes = requrire('./Routes/html.js')
 
 const PORT = process.env.PORT || 3001;
 
 const app = express();
 
+app.use(express.json());
 app.use(express.static('public'));
+app.use(htmlRoutes);
 
-app.get('/', (req, res) =>
-res.sendFile(path.join(__dirname, '/public/assets/index.html'))
-);
+
 
 app.listen(PORT, () => console.log(`App listening on port ${PORT}`));
