@@ -1,5 +1,6 @@
 const routes = require('express').Router();
 const fs = require('fs');
+const uuid = require('../public/Assets/js/uuid');
 
 routes.get('/api/notes', async (req, res) => {
 const notesdb = await JSON.parse(fs.readFileSync('db/db.json', 'utf8'));
